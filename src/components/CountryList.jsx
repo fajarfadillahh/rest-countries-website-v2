@@ -1,11 +1,14 @@
 import React from "react";
 
+// import components
+import CountrySearch from "./CountrySearch";
+
 const CountryList = () => {
   return (
     <section className="section pt-32">
       <div className="container grid gap-8">
         <div className="grid gap-12">
-          <div>Search</div>
+          <CountrySearch />
           <div>Filter</div>
         </div>
 
