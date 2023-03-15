@@ -2,6 +2,7 @@ import React from "react";
 
 // import components
 import CountrySearch from "./CountrySearch";
+import CountryRegion from "./CountryRegion";
 
 const CountryList = () => {
   return (
@@ -9,7 +10,7 @@ const CountryList = () => {
       <div className="container grid gap-8">
         <div className="grid gap-12">
           <CountrySearch />
-          <div>Filter</div>
+          <CountryRegion />
         </div>
 
         <div className="grid gap-12 justify-self-center">
