@@ -1,29 +1,27 @@
 import React from "react";
 
-// import image
-import Flag from "../assets/images/flag-be.svg";
+const CountryCard = ({ country }) => {
+  // destructure country
+  const { flags, name, population, region, capital } = country;
 
-const CountryCard = () => {
   return (
     <div className="w-max overflow-hidden rounded-lg shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
       <div className="overflow-hidden">
         <img
-          src={Flag}
-          alt=""
+          src={flags.svg}
+          alt={name + "flag"}
           className="h-[180px] w-[280px] object-cover object-center"
         />
       </div>
 
       <div className="max-w-[280px] overflow-hidden bg-white p-8">
-        <h3 className="section-title truncate pb-4 text-[18px]">
-          Name country
-        </h3>
+        <h3 className="section-title truncate pb-4 text-[18px]">{name}</h3>
 
         <ul className="flex flex-col gap-1 text-[14px]">
           {[
-            ["Population:", "1,234,567"],
-            ["Region:", "Region country"],
-            ["Capital:", "Capital country"],
+            ["Population:", new Intl.NumberFormat().format(population)],
+            ["Region:", `${region}`],
+            ["Capital:", `${capital}`],
           ].map(([name, value]) => {
             return (
               <li key={name} className="flex items-center gap-1">
