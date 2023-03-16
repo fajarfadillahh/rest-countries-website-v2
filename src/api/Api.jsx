@@ -14,4 +14,13 @@ const getAllCountries = async () => {
   }
 };
 
-export { getAllCountries };
+const getCountryByCode = async (c) => {
+  try {
+    const response = await RESTCountries.get(`/alpha/${c}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export { getAllCountries, getCountryByCode };

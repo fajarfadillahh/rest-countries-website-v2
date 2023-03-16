@@ -7,6 +7,7 @@ import { getAllCountries } from "../api/Api";
 import CountrySearch from "./CountrySearch";
 import CountryRegion from "./CountryRegion";
 import CountryCard from "./CountryCard";
+import { Link } from "react-router-dom";
 
 const CountryList = () => {
   const [countries, setCountries] = useState([]);
@@ -23,8 +24,6 @@ const CountryList = () => {
       });
   }, []);
 
-  console.log({ data: countries });
-
   return (
     <section className="section pt-32">
       <div className="container grid gap-8">
@@ -35,7 +34,14 @@ const CountryList = () => {
 
         <div className="grid gap-12 justify-self-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {countries?.slice(0, 16).map((country) => {
-            return <CountryCard key={country.numericCode} country={country} />;
+            return (
+              <Link
+                to={`/details/${country.alpha3Code.toLowerCase()}`}
+                key={country.numericCode}
+              >
+                <CountryCard country={country} />
+              </Link>
+            );
           })}
         </div>
       </div>
