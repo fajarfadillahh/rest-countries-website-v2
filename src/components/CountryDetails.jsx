@@ -17,8 +17,8 @@ const CountryDetails = () => {
           Back
         </Link>
 
-        <div className="grid gap-12">
-          <div className="h-[270px] max-w-[580px] overflow-hidden rounded-md">
+        <div className="grid gap-12 sm:mx-auto sm:max-w-2xl sm:justify-center lg:max-w-full lg:grid-cols-2 lg:items-center lg:gap-20">
+          <div className="h-[270px] max-w-[580px] overflow-hidden rounded-md sm:h-[320px] lg:h-[430px] xl:min-w-[580px]">
             <img
               src={Flag}
               alt="flag"
@@ -27,9 +27,11 @@ const CountryDetails = () => {
           </div>
 
           <div className="grid gap-6">
-            <h3 className="section-title text-[26px]">Name country</h3>
+            <h3 className="section-title text-[26px] lg:text-[32px]">
+              Name country
+            </h3>
 
-            <div className="grid gap-10">
+            <div className="grid gap-10 sm:grid-cols-2 sm:items-start lg:gap-20">
               <ul className="grid gap-3">
                 {[
                   ["Native Name:", "Native name"],
@@ -69,7 +71,7 @@ const CountryDetails = () => {
 
             <div>
               <h3 className="section-title mb-3 text-[20px]">
-                Borders Country:
+                Border Countries:
               </h3>
 
               <ul className="flex flex-wrap items-center gap-4">
