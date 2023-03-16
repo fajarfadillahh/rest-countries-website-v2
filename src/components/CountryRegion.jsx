@@ -3,7 +3,7 @@ import { Menu, Transition } from "@headlessui/react";
 import { RiArrowDownSLine } from "react-icons/ri";
 
 // continents list
-const continents = [
+const regions = [
   { name: "All", value: "All" },
   { name: "Africa", value: "Africa" },
   { name: "America", value: "Americas" },
@@ -13,12 +13,17 @@ const continents = [
 ];
 
 const CountryRegion = () => {
-  const [selectedContinent, setSelectedContinent] = useState("All");
+  const [selectedRegion, setSelectedRegion] = useState("All");
+
+  // handle selected region
+  const handleSelectedRegion = (region) => {
+    setSelectedRegion(region);
+  };
 
   return (
     <Menu as="div" className="relative z-10 w-max lg:justify-self-end">
       <Menu.Button className="inline-flex h-[56px] w-[210px] items-center justify-between rounded-md bg-white px-6 font-semibold text-gray-900 shadow-sm">
-        {selectedContinent === "All" ? "Filter by Region" : selectedContinent}
+        {selectedRegion === "All" ? "Filter by Region" : selectedRegion}
         <RiArrowDownSLine size="1.3rem" />
       </Menu.Button>
 
@@ -35,15 +40,15 @@ const CountryRegion = () => {
           as="ul"
           className="absolute mt-2 flex w-full flex-col gap-1 rounded-md bg-white py-4 px-6 shadow-sm"
         >
-          {continents.map((continent) => {
+          {regions.map((region) => {
             return (
               <Menu.Item
                 as="li"
-                key={continent.name}
-                onClick={() => setSelectedContinent(continent.value)}
+                key={region.name}
+                onClick={() => handleSelectedRegion(region.value)}
                 className="cursor-pointer font-semibold text-gray-900 hover:text-gray-600"
               >
-                {continent.name}
+                {region.name}
               </Menu.Item>
             );
           })}
