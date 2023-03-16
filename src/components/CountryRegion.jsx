@@ -16,7 +16,7 @@ const CountryRegion = () => {
   const [selectedContinent, setSelectedContinent] = useState("All");
 
   return (
-    <Menu as="div" className="relative z-10 w-max">
+    <Menu as="div" className="relative z-10 w-max lg:justify-self-end">
       <Menu.Button className="inline-flex h-[56px] w-[210px] items-center justify-between rounded-md bg-white px-6 font-semibold text-gray-900 shadow-sm">
         {selectedContinent === "All" ? "Filter by Region" : selectedContinent}
         <RiArrowDownSLine size="1.3rem" />
