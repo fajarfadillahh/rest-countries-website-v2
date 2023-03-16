@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 // import api
 import { getAllCountries } from "../api/Api";
@@ -7,7 +8,6 @@ import { getAllCountries } from "../api/Api";
 import CountrySearch from "./CountrySearch";
 import CountryRegion from "./CountryRegion";
 import CountryCard from "./CountryCard";
-import { Link } from "react-router-dom";
 
 const CountryList = () => {
   const [countries, setCountries] = useState([]);

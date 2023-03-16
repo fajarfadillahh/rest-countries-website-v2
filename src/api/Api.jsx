@@ -14,9 +14,9 @@ const getAllCountries = async () => {
   }
 };
 
-const getCountryByCode = async (c) => {
+const getCountryByCode = async (code) => {
   try {
-    const response = await RESTCountries.get(`/alpha/${c}`);
+    const response = await RESTCountries.get(`/alpha/${code}`);
     return response.data;
   } catch (error) {
     console.error(error);
