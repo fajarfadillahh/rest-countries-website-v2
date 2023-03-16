@@ -13,9 +13,14 @@ const CountryList = () => {
 
   useEffect(() => {
     // get all countries
-    getAllCountries().then((response) => {
-      setCountries(response);
-    });
+    getAllCountries()
+      .then((response) => {
+        setCountries(response);
+      })
+      .catch((error) => {
+        setCountries(null);
+        console.log(error);
+      });
   }, []);
 
   console.log({ data: countries });
@@ -29,7 +34,9 @@ const CountryList = () => {
         </div>
 
         <div className="grid gap-12 justify-self-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          <CountryCard />
+          {countries?.slice(0, 16).map((country) => {
+            return <CountryCard key={country.numericCode} country={country} />;
+          })}
         </div>
       </div>
     </section>
