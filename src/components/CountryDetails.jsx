@@ -48,6 +48,23 @@ const CountryDetails = () => {
                   );
                 })}
               </ul>
+
+              <ul className="grid gap-3">
+                {[
+                  ["Top Level Domain:", ".ab"],
+                  ["Currencies:", "Currency country"],
+                  ["Languages:", "Language country"],
+                ].map(([name, value]) => {
+                  return (
+                    <li key={name} className="inline-flex items-start gap-1">
+                      <h3 className="whitespace-nowrap font-semibold text-gray-900">
+                        {name}
+                      </h3>
+                      <p className="text-gray-800">{value}</p>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
 
             <div>
@@ -55,7 +72,13 @@ const CountryDetails = () => {
                 Borders Country:
               </h3>
 
-              <ul className="flex flex-wrap items-center gap-44">
+              <ul className="flex flex-wrap items-center gap-4">
+                <li className="inline-flex w-[70px] justify-center rounded-md bg-white py-2 text-[14px] text-gray-800 shadow-sm">
+                  Border
+                </li>
+                <li className="inline-flex w-[70px] justify-center rounded-md bg-white py-2 text-[14px] text-gray-800 shadow-sm">
+                  Border
+                </li>
                 <li className="inline-flex w-[70px] justify-center rounded-md bg-white py-2 text-[14px] text-gray-800 shadow-sm">
                   Border
                 </li>
