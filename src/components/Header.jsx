@@ -4,7 +4,7 @@ import { RiMoonClearLine } from "react-icons/ri";
 
 const Header = () => {
   return (
-    <header className="fixed inset-x-0 top-0 mx-auto max-w-[1440px] bg-white shadow-sm">
+    <header className="fixed inset-x-0 top-0 z-50 mx-auto max-w-[1440px] bg-white shadow-sm">
       <div className="container flex h-24 items-center justify-between">
         <Link to="/" className="section-title text-[18px]">
           Where in the world?

@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { RiArrowDownSLine } from "react-icons/ri";
 
-// continents list
+// regions list
 const regions = [
   { name: "All", value: "All" },
   { name: "Africa", value: "Africa" },

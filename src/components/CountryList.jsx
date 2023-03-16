@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+// import api
+import { getAllCountries } from "../api/Api";
 
 // import components
 import CountrySearch from "./CountrySearch";
@@ -6,6 +9,17 @@ import CountryRegion from "./CountryRegion";
 import CountryCard from "./CountryCard";
 
 const CountryList = () => {
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    // get all countries
+    getAllCountries().then((response) => {
+      setCountries(response);
+    });
+  }, []);
+
+  console.log({ data: countries });
+
   return (
     <section className="section pt-32">
       <div className="container grid gap-8">
