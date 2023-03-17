@@ -6,7 +6,7 @@ const CountryCard = ({ country }) => {
       <div className="overflow-hidden">
         <img
           src={country.flag}
-          alt={country.name + "flag"}
+          alt={`${country.name} flag`}
           className="h-[180px] w-[280px] object-cover object-center"
         />
       </div>

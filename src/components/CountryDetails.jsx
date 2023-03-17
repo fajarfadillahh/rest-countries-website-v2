@@ -37,7 +37,7 @@ const CountryDetails = () => {
           <div className="h-[270px] max-w-[580px] overflow-hidden rounded-md sm:h-[320px] lg:h-[430px] xl:min-w-[580px]">
             <img
               src={country.flag}
-              alt={country.name + "flag"}
+              alt={`${country.name} flag`}
               className="h-full w-full object-cover object-center"
             />
           </div>

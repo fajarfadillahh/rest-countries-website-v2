@@ -13,7 +13,6 @@ const CountryList = () => {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
-    // get all countries
     getAllCountries()
       .then((response) => {
         setCountries(response);
