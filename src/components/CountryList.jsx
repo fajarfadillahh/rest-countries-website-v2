@@ -10,7 +10,7 @@ import CountryRegion from "./CountryRegion";
 import CountryCard from "./CountryCard";
 
 const CountryList = () => {
-  const [countries, setCountries] = useState(null);
+  const [countries, setCountries] = useState([]);
 
   useEffect(() => {
     getAllCountries()

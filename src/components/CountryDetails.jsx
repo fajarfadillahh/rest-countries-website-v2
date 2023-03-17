@@ -7,7 +7,7 @@ import { getCountryByCode } from "../api/Api";
 
 const CountryDetails = () => {
   const { code } = useParams();
-  const [country, setCountry] = useState(null);
+  const [country, setCountry] = useState([]);
 
   useEffect(() => {
     getCountryByCode(code)
