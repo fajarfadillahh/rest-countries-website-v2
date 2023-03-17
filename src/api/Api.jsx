@@ -6,21 +6,13 @@ const RESTCountries = Axios.create({
 
 // get all countries
 const getAllCountries = async () => {
-  try {
-    const response = await RESTCountries.get("/all");
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+  const response = await RESTCountries.get("/all");
+  return response.data;
 };
 
 const getCountryByCode = async (code) => {
-  try {
-    const response = await RESTCountries.get(`/alpha/${code}`);
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+  const response = await RESTCountries.get(`/alpha/${code}`);
+  return response.data;
 };
 
 export { getAllCountries, getCountryByCode };
