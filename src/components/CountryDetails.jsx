@@ -7,7 +7,7 @@ import { getCountryByCode } from "../api/Api";
 
 const CountryDetails = () => {
   const { code } = useParams();
-  const [country, setCountry] = useState([]);
+  const [country, setCountry] = useState(null);
 
   useEffect(() => {
     getCountryByCode(code)
@@ -19,8 +19,6 @@ const CountryDetails = () => {
         console.log(error);
       });
   }, [code]);
-
-  console.log({ detail: country });
 
   return (
     <section className="section pt-32">
@@ -110,13 +108,7 @@ const CountryDetails = () => {
               </h3>
 
               <ul className="flex flex-wrap items-center gap-4">
-                <li className="inline-flex w-[70px] justify-center rounded-md bg-white py-2 text-[14px] text-gray-800 shadow-sm">
-                  Border
-                </li>
-                <li className="inline-flex w-[70px] justify-center rounded-md bg-white py-2 text-[14px] text-gray-800 shadow-sm">
-                  Border
-                </li>
-                <li className="inline-flex w-[70px] justify-center rounded-md bg-white py-2 text-[14px] text-gray-800 shadow-sm">
+                <li className="inline-flex justify-center rounded-md bg-white py-2 px-4 text-[14px] text-gray-800 shadow-sm">
                   Border
                 </li>
               </ul>
