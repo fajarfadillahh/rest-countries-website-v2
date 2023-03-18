@@ -10,9 +10,10 @@ const getAllCountries = async () => {
   return response.data;
 };
 
+// get country by code (alpha3code)
 const getCountryByCode = async (code) => {
   const response = await RESTCountries.get(`/alpha/${code}`);
   return response.data;
 };
 
-export { getAllCountries, getCountryByCode };
+export { RESTCountries, getAllCountries, getCountryByCode };

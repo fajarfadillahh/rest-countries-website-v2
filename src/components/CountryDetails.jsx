@@ -3,11 +3,12 @@ import { RiArrowLeftLine } from "react-icons/ri";
 import { Link, useParams } from "react-router-dom";
 
 // import api
-import { getCountryByCode } from "../api/Api";
+import { RESTCountries, getCountryByCode } from "../api/Api";
 
 const CountryDetails = () => {
   const { code } = useParams();
   const [country, setCountry] = useState([]);
+  const [borders, setBorders] = useState([]);
 
   useEffect(() => {
     getCountryByCode(code)
@@ -19,6 +20,21 @@ const CountryDetails = () => {
         console.log(error);
       });
   }, [code]);
+
+  // get borders country
+  useEffect(() => {
+    const getBordersCountry = async () => {
+      const borderName = await Promise.all(
+        country.borders.map(async (border) => {
+          const response = await RESTCountries.get(`/alpha/${border}`);
+          return response.data.name;
+        })
+      );
+      setBorders(borderName);
+    };
+
+    getBordersCountry();
+  }, [country]);
 
   return (
     <section className="section pt-32">
@@ -35,7 +51,7 @@ const CountryDetails = () => {
           <div className="h-[270px] max-w-[580px] overflow-hidden rounded-md sm:h-[320px] lg:h-[430px] xl:min-w-[580px]">
             <img
               src={country.flag}
-              alt={`${country.name} flag`}
+              alt="country flag"
               className="h-full w-full object-cover object-center"
             />
           </div>
@@ -108,9 +124,22 @@ const CountryDetails = () => {
               </h3>
 
               <ul className="flex flex-wrap items-center gap-4">
-                <li className="inline-flex justify-center rounded-md bg-white py-2 px-4 text-[14px] text-gray-800 shadow-sm">
-                  Border
-                </li>
+                {borders.length === 0 ? (
+                  <li className="inline-flex justify-center rounded-md bg-white py-2 px-4 text-[14px] text-gray-800 shadow-sm">
+                    No Border...
+                  </li>
+                ) : (
+                  borders.map((border, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="inline-flex justify-center rounded-md bg-white py-2 px-4 text-[14px] text-gray-800 shadow-sm"
+                      >
+                        {border}
+                      </li>
+                    );
+                  })
+                )}
               </ul>
             </div>
           </div>
