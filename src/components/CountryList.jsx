@@ -13,6 +13,7 @@ const CountryList = () => {
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState("All");
+  const [searchCountry, setSearchCountry] = useState("");
 
   useEffect(() => {
     getAllCountries()
@@ -32,19 +33,32 @@ const CountryList = () => {
         ? countries
         : countries.filter((country) => country.region === selectedRegion);
 
-    setFilteredCountries(filtered);
-  }, [countries, selectedRegion]);
+    // filter countries by name / search country
+    const searched =
+      searchCountry === ""
+        ? filtered
+        : filtered.filter((country) =>
+            country.name.toLowerCase().includes(searchCountry)
+          );
+
+    setFilteredCountries(searched);
+  }, [countries, selectedRegion, searchCountry]);
 
   // handle selected region
   const handleSelectedRegion = (region) => {
     setSelectedRegion(region);
   };
 
+  // handle search country
+  const handleSearchCountry = (event) => {
+    setSearchCountry(event.target.value);
+  };
+
   return (
     <section className="section pt-32">
       <div className="container grid gap-8">
         <div className="grid gap-12 lg:grid-cols-2">
-          <CountrySearch />
+          <CountrySearch setSearch={handleSearchCountry} />
           <CountryRegion setRegion={handleSelectedRegion} />
         </div>
 
