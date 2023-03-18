@@ -12,12 +12,13 @@ const regions = [
   { name: "Oceania", value: "Oceania" },
 ];
 
-const CountryRegion = () => {
+const CountryRegion = ({ setRegion }) => {
   const [selectedRegion, setSelectedRegion] = useState("All");
 
   // handle selected region
   const handleSelectedRegion = (region) => {
     setSelectedRegion(region);
+    setRegion(region);
   };
 
   return (

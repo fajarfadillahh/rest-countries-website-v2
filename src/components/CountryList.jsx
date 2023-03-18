@@ -11,6 +11,8 @@ import CountryCard from "./CountryCard";
 
 const CountryList = () => {
   const [countries, setCountries] = useState([]);
+  const [filteredCountries, setFilteredCountries] = useState([]);
+  const [selectedRegion, setSelectedRegion] = useState("All");
 
   useEffect(() => {
     getAllCountries()
@@ -23,16 +25,31 @@ const CountryList = () => {
       });
   }, []);
 
+  useEffect(() => {
+    // filter countries by region
+    const filtered =
+      selectedRegion === "All"
+        ? countries
+        : countries.filter((country) => country.region === selectedRegion);
+
+    setFilteredCountries(filtered);
+  }, [countries, selectedRegion]);
+
+  // handle selected region
+  const handleSelectedRegion = (region) => {
+    setSelectedRegion(region);
+  };
+
   return (
     <section className="section pt-32">
       <div className="container grid gap-8">
         <div className="grid gap-12 lg:grid-cols-2">
           <CountrySearch />
-          <CountryRegion />
+          <CountryRegion setRegion={handleSelectedRegion} />
         </div>
 
         <div className="grid gap-12 justify-self-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {countries?.slice(0, 16).map((country) => {
+          {filteredCountries.slice(0, 32).map((country) => {
             return (
               <Link
                 to={`/details/${country.alpha3Code.toLowerCase()}`}
