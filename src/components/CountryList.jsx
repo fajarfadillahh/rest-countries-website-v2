@@ -38,7 +38,7 @@ const CountryList = () => {
       searchCountry === ""
         ? filtered
         : filtered.filter((country) =>
-            country.name.toLowerCase().includes(searchCountry)
+            country.name.toLowerCase().includes(searchCountry.toLowerCase())
           );
 
     setFilteredCountries(searched);
