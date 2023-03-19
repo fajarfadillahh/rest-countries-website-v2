@@ -41,7 +41,7 @@ const CountryDetails = () => {
       <div className="container grid gap-10">
         <Link
           to="/"
-          className="inline-flex h-[56px] w-max items-center gap-4 rounded-md bg-white px-8 font-semibold text-gray-900 shadow-sm"
+          className="inline-flex h-[56px] w-max items-center gap-4 rounded-md bg-white px-8 font-semibold text-gray-900 shadow-sm dark:bg-gray-700 dark:text-white"
         >
           <RiArrowLeftLine size="1.3rem" />
           Back
@@ -75,10 +75,10 @@ const CountryDetails = () => {
                 ].map(([name, value]) => {
                   return (
                     <li key={name} className="inline-flex items-start gap-1">
-                      <h3 className="whitespace-nowrap font-semibold text-gray-900">
+                      <h3 className="whitespace-nowrap font-semibold text-gray-900 dark:text-white">
                         {name}
                       </h3>
-                      <p className="text-gray-800">{value}</p>
+                      <p className="text-gray-800 dark:text-white">{value}</p>
                     </li>
                   );
                 })}
@@ -108,10 +108,10 @@ const CountryDetails = () => {
                 ].map(([name, value]) => {
                   return (
                     <li key={name} className="inline-flex items-start gap-1">
-                      <h3 className="whitespace-nowrap font-semibold text-gray-900">
+                      <h3 className="whitespace-nowrap font-semibold text-gray-900 dark:text-white">
                         {name}
                       </h3>
-                      <p className="text-gray-800">{value}</p>
+                      <p className="text-gray-800 dark:text-white">{value}</p>
                     </li>
                   );
                 })}
@@ -125,7 +125,7 @@ const CountryDetails = () => {
 
               <ul className="flex flex-wrap items-center gap-4">
                 {borders.length === 0 ? (
-                  <li className="inline-flex justify-center rounded-md bg-white py-2 px-4 text-[14px] text-gray-800 shadow-sm">
+                  <li className="inline-flex justify-center rounded-md bg-white py-2 px-4 text-[14px] text-gray-800 shadow-sm dark:bg-gray-700 dark:text-white">
                     No Border...
                   </li>
                 ) : (
@@ -133,7 +133,7 @@ const CountryDetails = () => {
                     return (
                       <li
                         key={border.alpha3Code}
-                        className="inline-flex justify-center rounded-md bg-white py-2 px-4 text-[14px] text-gray-800 shadow-sm"
+                        className="inline-flex justify-center rounded-md bg-white py-2 px-4 text-[14px] text-gray-800 shadow-sm dark:bg-gray-700 dark:text-white"
                       >
                         <Link
                           to={`/details/${border.alpha3Code.toLowerCase()}`}

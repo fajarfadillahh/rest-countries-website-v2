@@ -63,7 +63,7 @@ const CountryList = () => {
         </div>
 
         <div className="grid gap-12 justify-self-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {filteredCountries.slice(0, 32).map((country) => {
+          {filteredCountries?.map((country) => {
             return (
               <Link
                 to={`/details/${country.alpha3Code.toLowerCase()}`}
