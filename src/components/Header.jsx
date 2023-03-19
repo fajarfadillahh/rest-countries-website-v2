@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { RiMoonClearFill, RiMoonClearLine } from "react-icons/ri";
 
 // import custom hooks
-import useColorMode from "../hooks/UseColorMode";
+import useColorMode from "../hooks/useColorMode";
 
 const Header = () => {
   const [colorMode, setColorMode] = useColorMode();
