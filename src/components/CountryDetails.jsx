@@ -144,6 +144,7 @@ const CountryDetails = () => {
                         <Link
                           to={`/details/${border.alpha3Code.toLowerCase()}`}
                           key={border.alpha3Code}
+                          onClick={() => setLoading(border)}
                           className="inline-flex justify-center rounded-md bg-white py-2 px-4 text-[14px] text-gray-800 shadow-sm dark:bg-gray-700 dark:text-white"
                         >
                           {border.name}
