@@ -23,7 +23,7 @@ const CountryRegion = ({ setRegion }) => {
 
   return (
     <Menu as="div" className="relative z-10 w-max lg:justify-self-end">
-      <Menu.Button className="inline-flex h-[56px] w-[210px] items-center justify-between rounded-md bg-white px-6 font-semibold text-gray-900 shadow-sm">
+      <Menu.Button className="inline-flex h-[56px] w-[210px] items-center justify-between rounded-md bg-white px-6 font-semibold text-gray-900 shadow-sm dark:bg-gray-700 dark:text-white">
         {selectedRegion === "All" ? "Filter by Region" : selectedRegion}
         <RiArrowDownSLine size="1.3rem" />
       </Menu.Button>
@@ -39,7 +39,7 @@ const CountryRegion = ({ setRegion }) => {
       >
         <Menu.Items
           as="ul"
-          className="absolute mt-2 flex w-full flex-col gap-1 rounded-md bg-white py-4 px-6 shadow-sm"
+          className="absolute mt-2 flex w-full flex-col gap-1 rounded-md bg-white py-4 px-6 shadow-sm dark:bg-gray-700"
         >
           {regions.map((region) => {
             return (
@@ -47,7 +47,7 @@ const CountryRegion = ({ setRegion }) => {
                 as="li"
                 key={region.name}
                 onClick={() => handleSelectedRegion(region.value)}
-                className="cursor-pointer font-semibold text-gray-900 hover:text-gray-600"
+                className="cursor-pointer font-semibold text-gray-900 hover:text-gray-600 dark:text-white dark:hover:text-gray-300"
               >
                 {region.name}
               </Menu.Item>
