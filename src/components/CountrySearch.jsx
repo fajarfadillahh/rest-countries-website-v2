@@ -12,7 +12,7 @@ const CountrySearch = ({ setSearch }) => {
         type="text"
         placeholder="Search for a country..."
         onChange={setSearch}
-        className="h-full w-full bg-transparent from-gray-900 pr-8 font-semibold outline-none placeholder:text-gray-600"
+        className="h-full w-full bg-transparent pr-8 font-semibold text-gray-900 outline-none placeholder:text-gray-600"
       />
     </form>
   );
