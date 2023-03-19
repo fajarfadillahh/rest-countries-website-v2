@@ -27,7 +27,7 @@ const CountryDetails = () => {
       const borderName = await Promise.all(
         country.borders.map(async (border) => {
           const response = await RESTCountries.get(`/alpha/${border}`);
-          return response.data.name;
+          return response.data;
         })
       );
       setBorders(borderName);
@@ -129,13 +129,17 @@ const CountryDetails = () => {
                     No Border...
                   </li>
                 ) : (
-                  borders.map((border, index) => {
+                  borders.map((border) => {
                     return (
                       <li
-                        key={index}
+                        key={border.alpha3Code}
                         className="inline-flex justify-center rounded-md bg-white py-2 px-4 text-[14px] text-gray-800 shadow-sm"
                       >
-                        {border}
+                        <Link
+                          to={`/details/${border.alpha3Code.toLowerCase()}`}
+                        >
+                          {border.name}
+                        </Link>
                       </li>
                     );
                   })
