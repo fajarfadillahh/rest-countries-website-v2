@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 // import custom hooks localstorage
-import useLocalStorage from "./UseLocalStorage";
+import useLocalStorage from "./useLocalStorage";
 
 const useColorMode = () => {
   const [colorMode, setColorMode] = useLocalStorage("color-mode", "light");
