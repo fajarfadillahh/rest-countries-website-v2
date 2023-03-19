@@ -11,7 +11,7 @@ const CountryCard = ({ country }) => {
         />
       </div>
 
-      <div className="max-w-[280px] overflow-hidden bg-white p-8">
+      <div className="max-w-[280px] overflow-hidden bg-white p-8 dark:bg-gray-700">
         <h3 className="section-title truncate pb-4 text-[18px]">
           {country.name}
         </h3>
@@ -24,8 +24,10 @@ const CountryCard = ({ country }) => {
           ].map(([name, value]) => {
             return (
               <li key={name} className="flex items-center gap-1">
-                <h3 className="font-semibold text-gray-900">{name}</h3>
-                <p className="text-gray-700">{value}</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white">
+                  {name}
+                </h3>
+                <p className="text-gray-700 dark:text-white">{value}</p>
               </li>
             );
           })}

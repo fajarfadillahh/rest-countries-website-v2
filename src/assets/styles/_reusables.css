@@ -17,6 +17,6 @@
 
   /* main class / main container */
   .main {
-    @apply mx-auto min-h-screen max-w-[1440px] overflow-hidden bg-gray-500 transition-all duration-300;
+    @apply mx-auto min-h-screen max-w-[1440px] overflow-hidden bg-gray-500 dark:bg-gray-800;
   }
 }
