@@ -4,10 +4,10 @@
     @apply py-16;
   }
   .section-title {
-    @apply font-black -tracking-tighter text-gray-900;
+    @apply font-black -tracking-tighter text-gray-900 dark:text-white;
   }
   .section-text {
-    @apply font-semibold -tracking-tighter text-gray-600;
+    @apply font-semibold -tracking-tighter text-gray-600 dark:text-white;
   }
 
   /* container class */

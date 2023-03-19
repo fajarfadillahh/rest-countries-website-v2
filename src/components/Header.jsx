@@ -9,14 +9,14 @@ const Header = () => {
   const [colorMode, setColorMode] = useColorMode();
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 mx-auto max-w-[1440px] bg-white shadow-sm">
+    <header className="fixed inset-x-0 top-0 z-50 mx-auto max-w-[1440px] bg-white shadow-sm dark:bg-gray-700">
       <div className="container flex h-24 items-center justify-between">
         <Link to="/" className="section-title text-[18px]">
           Where in the world?
         </Link>
 
         <div
-          className="inline-flex cursor-pointer items-center gap-[6px] font-semibold text-gray-900"
+          className="inline-flex cursor-pointer items-center gap-[6px] font-semibold text-gray-900 dark:text-white"
           onClick={() => setColorMode(colorMode === "light" ? "dark" : "light")}
         >
           {colorMode === "light" ? (
